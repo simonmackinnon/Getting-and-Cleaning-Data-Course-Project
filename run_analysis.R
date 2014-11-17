@@ -1,6 +1,9 @@
 library(data.table)
 library(plyr)
 
+# data can be downloaded from: 
+#   https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 # Merge the training and the test sets to create one data set.
 
   #Get the test data
