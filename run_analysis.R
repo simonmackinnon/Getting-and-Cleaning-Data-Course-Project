@@ -40,6 +40,9 @@ names(mergedData) <- c("Subject",
                        "Activity", 
                        as.character(features))
 
+  #free the memory used by features
+rm(features)
+
 # Extracts only the measurements on the mean and standard deviation for each measurement. 
 
   #get the specific names from the table
@@ -55,8 +58,8 @@ rm(mergedData)
 
   # rename for ease of viewing
 names(extractedData) <- c("Subject", 
-                       "Activity", 
-                       as.character(extractedFeatures))
+                          "Activity", 
+                          as.character(extractedFeatures))
 
   #free up the memory used by extractedFeatures
 rm(extractedFeatures)
@@ -72,11 +75,33 @@ extractedData$Activity <- factor(extractedData$Activity)
   # relevel the factor (this recodes the number values to be the descriptive names)
 levels(extractedData$Activity) <- activities
 
+  #free the memory used by activities
+rm(activities)
+
 # Appropriately labels the data set with descriptive variable names. 
 
+varNames <- c("Mean of the linear acceleration of the body on the phone (time domain)",
+              "Standard deviation of the linear acceleration of the body on the phone (time domain)",
+              "Mean of the gravitational acceleration on the phone (time domain)",
+              "Standard deviation of the gravitational acceleration on the phone (time domain)",
+              "Mean of the linear jerk of the body on the phone (time domain)",
+              "Standard deviation of the linear jerk of the body on the phone (time domain)",
+              "Mean of the angular velocity of the body on the phone (time domain)",
+              "Standard deviation of the angular velocity of the body on the phone (time domain)",
+              "Mean of the angular jerk of the body on the phone (time domain)",
+              "Standard deviation of the angular jerk of the body on the phone (time domain)",              
+              "Mean of the linear acceleration of the body on the phone (frequency domain)",
+              "Standard deviation of the linear acceleration of the body on the phone (frequency domain)",
+              "Mean of the linear jerk of the body on the phone (frequency domain)",
+              "Standard deviation of the linear jerk of the body on the phone (frequency domain)",
+              "Mean of the angular velocity of the body on the phone (frequency domain)",
+              "Standard deviation of the angular velocity of the body on the phone (frequency domain)",
+              "Mean of the angular jerk of the body on the phone (frequency domain)",
+              "Standard deviation of the angular jerk of the body on the phone (frequency domain)")
 
-
-
+names(extractedData) <- c("Subject", 
+                          "Activity", 
+                          as.character(varNames))
 
 # From the data set in step 4, creates a second, independent tidy data set with 
 #     the average of each variable for each activity and each subject.
