@@ -1,5 +1,6 @@
 library(data.table)
 library(plyr)
+library(reshape2)
 
 # data can be downloaded from: 
 #   https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -22,50 +23,41 @@ test_set <- cbind(subject_test, activity_test, measurement_test)
   #make the training data set
 train_set <- cbind(subject_train, activity_train, measurement_train)
 
+  #remove variables no longer needed (free memory)
+rm(subject_test, measurement_test, activity_test,
+   subject_train, measurement_train, activity_train)
+
   #rename the data sets (Ensure common variable names)
-names(train_set) <- c("Subject", "Activity", paste("V", 1:561, sep=""))
-names(test_set) <- c("Subject","Activity", paste("V", 1:561, sep=""))
+colnames(train_set)[1] <- "Subject"
+colnames(train_set)[2] <- "Activity"
+colnames(test_set)[1] <- "Subject"
+colnames(test_set)[2] <- "Activity"
 
   #merge by all common variables (columns)
 mergedData <- merge(test_set, train_set, all=TRUE)
 
-  #free up the memory by getting rid of variables no longer needed
-rm(test_set, train_set, 
-   subject_test, subject_train, 
-   activity_test, activity_train,
-   measurement_test, measurement_train)
+  #remove variables no longer needed (free memory)
+rm(test_set, train_set)
 
   #read the table and use only the second column
 features <- read.table("./UCI HAR Dataset/features.txt")[,2]
 
-  #read in the measurement feature names (no need to store this vector)
-names(mergedData) <- c("Subject", 
-                       "Activity", 
-                       as.character(features))
-
-  #free the memory used by features
-rm(features)
-
 # Extracts only the measurements on the mean and standard deviation for each measurement. 
 
   #get the specific names from the table
-extractedFeatures <- names(mergedData)[grepl("^.+(mean\\(\\)|std\\(\\))$",names(mergedData))]
+extractedFeaturesTF <- grepl("^.+(mean\\(\\)|std\\(\\))$",features)
 
   #extract the columns that end with "mean()" or "std()" as representative of mean and standard
   # deviation values for each measurement
 extractedData <- cbind(mergedData$Subject, mergedData$Activity, 
-                       mergedData[,grepl("^.+(mean\\(\\)|std\\(\\))$",names(mergedData))])
+                       mergedData[extractedFeaturesTF])
 
-  #free up the memory used by mergedData
-rm(mergedData)
+  #remove variables no longer needed (free memory)
+rm(features, extractedFeaturesTF)
 
   # rename for ease of viewing
-names(extractedData) <- c("Subject", 
-                          "Activity", 
-                          as.character(extractedFeatures))
-
-  #free up the memory used by extractedFeatures
-rm(extractedFeatures)
+colnames(extractedData)[1] <- "Subject"
+colnames(extractedData)[2] <- "Activity"
   
 # Use descriptive activity names to name the activities in the data set
 
@@ -78,7 +70,7 @@ extractedData$Activity <- factor(extractedData$Activity)
   # relevel the factor (this recodes the number values to be the descriptive names)
 levels(extractedData$Activity) <- activities
 
-  #free the memory used by activities
+  #remove variables no longer needed (free memory)
 rm(activities)
 
 # Appropriately labels the data set with descriptive variable names. 
@@ -108,6 +100,19 @@ names(extractedData) <- c("Subject",
 
 # From the data set in step 4, creates a second, independent tidy data set with 
 #     the average of each variable for each activity and each subject.
+
+groupColumns = c("Subject","Activity")
+dataColumns = (length(groupColumns)+1):ncol(extractedData)
+resultDataFrame = ddply(extractedData, groupColumns, function(x) colMeans(x[dataColumns]))
+
+  #remove variables no longer needed (free memory)
+rm(groupColumns, dataColumns)
+
+  #rename to indictate averaged aggregate values
+names(resultDataFrame) <- c("Subject", "Activity", paste("Mean of [",as.character(varNames), "]", sep=""))
+
+  #remove variables no longer needed (free memory)
+rm(varNames)
 
 
 
