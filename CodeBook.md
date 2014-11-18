@@ -1,5 +1,7 @@
 #The Code Book
 
+
+
 ### Variable Information
 * "Subject"                                                                                            
 * "Activity"                                                                                           
@@ -29,5 +31,15 @@
 2. Assume units of measurement are the same for linear acceleration and gravity, i.e. 'g'
 
 ### Study dDesign 
+
+The raw data was downloaded from:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+which is a copy of the data orginially from:
+
+http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
+
+An explanation of the raw data can be found in the extracted files "\UCI HAR Dataset\README.txt" and "\UCI HAR Dataset\features_info.txt"
 
 
