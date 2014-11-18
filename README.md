@@ -10,7 +10,9 @@ To run the transformations in R, (or R Studio,) source the script by entering so
 *N.B: If the analysis script is located somewhere other than the working directory, an absolute or relative (to the working directory) path must be supplied to the source function, 
 
   e.g. 
+  
     source("C:/path/to/run_analysis.R") or 
+    
     source("./relative/path/to/run_analysis.R")
 
 ###The Code Book
