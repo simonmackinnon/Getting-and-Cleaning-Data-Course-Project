@@ -8,6 +8,7 @@ The R-script 'run_analysis.R' assumes the folder containing the data (UCI HAR Da
 
 To run the transformations in R, (or R Studio,) source the script by entering source("./run_analysis.R"). 
 *N.B: If the analysis script is located somewhere other than the working directory, an absolute or relative (to the working directory) path must be supplied to the source function, 
+
   e.g. 
     source("C:/path/to/run_analysis.R") or 
     source("./relative/path/to/run_analysis.R")
