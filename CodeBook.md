@@ -3,8 +3,8 @@
 
 
 ### Variable Information
-* "Subject"                                                                                            
-* "Activity"                                                                                           
+* "Subject" - Subject Id, integer from 1 to 30 representing each participant in the data
+* "Activity" - Activity, textual description of the activity performed during measurements               
 * "Mean of [Mean of the linear acceleration of the body on the phone (time domain)]"                   
 * "Mean of [Standard deviation of the linear acceleration of the body on the phone (time domain)]"     
 * "Mean of [Mean of the gravitational acceleration on the phone (time domain)]"                        
