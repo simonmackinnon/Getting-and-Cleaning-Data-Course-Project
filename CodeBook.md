@@ -55,6 +55,6 @@ which is a copy of the data orginially from:
 
 http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
 
-An explanation of the raw data can be found in the extracted files "\UCI HAR Dataset\README.txt" and "\UCI HAR Dataset\features_info.txt"
+An explanation of the raw data can be found in by extracting the compressed files "\UCI HAR Dataset\README.txt" and "\UCI HAR Dataset\features_info.txt"
 
 
