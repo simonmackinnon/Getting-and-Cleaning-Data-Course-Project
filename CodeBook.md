@@ -99,23 +99,40 @@ The variables Subject and Activity were taken from the subject\_xxxx.txt and and
 
 Additional variables were created by taking the average (for each Subject/Activity) of extracted total (i.e. not axial) mean and standard deviation variables. They are the following:
 
-Mean of [Mean of the linear acceleration of the body on the phone (time domain)]                 
+Mean of [Mean of the linear acceleration of the body on the phone (time domain)]        
+
 Mean of [Standard deviation of the linear acceleration of the body on the phone (time domain)]
+
 Mean of [Mean of the gravitational acceleration on the phone (time domain)]
+
 Mean of [Standard deviation of the gravitational acceleration on the phone (time domain)]
-Mean of [Mean of the linear jerk of the body on the phone (time domain)]                    
+
+Mean of [Mean of the linear jerk of the body on the phone (time domain)]   
+
 Mean of [Standard deviation of the linear jerk of the body on the phone (time domain)]
+
 Mean of [Mean of the angular velocity of the body on the phone (time domain)]
+
 Mean of [Standard deviation of the angular velocity of the body on the phone (time domain)]
-Mean of [Mean of the angular jerk of the body on the phone (time domain)]                
+
+Mean of [Mean of the angular jerk of the body on the phone (time domain)]    
+
 Mean of [Standard deviation of the angular jerk of the body on the phone (time domain)]
-Mean of [Mean of the linear acceleration of the body on the phone (frequency domain)]           
+
+Mean of [Mean of the linear acceleration of the body on the phone (frequency domain)] 
+
 Mean of [Standard deviation of the linear acceleration of the body on the phone (frequency domain)]
-Mean of [Mean of the linear jerk of the body on the phone (frequency domain)]                  
+
+Mean of [Mean of the linear jerk of the body on the phone (frequency domain)]
+
 Mean of [Standard deviation of the linear jerk of the body on the phone (frequency domain)]
-Mean of [Mean of the angular velocity of the body on the phone (frequency domain)]                 
+
+Mean of [Mean of the angular velocity of the body on the phone (frequency domain)]  
+
 Mean of [Standard deviation of the angular velocity of the body on the phone (frequency domain)] 
-Mean of [Mean of the angular jerk of the body on the phone (frequency domain)]                     
+
+Mean of [Mean of the angular jerk of the body on the phone (frequency domain)] 
+
 Mean of [Standard deviation of the angular jerk of the body on the phone (frequency domain)] 
 
 ### Assumptions and Units of Measurement 
