@@ -147,7 +147,7 @@ Mean of [Standard deviation of the angular jerk of the body on the phone (freque
 
 5. Assume jerk units are 1st derivitive of units for respective acceleration
 
-### Study dDesign 
+### Study Design 
 
 The raw data was downloaded from:
 
