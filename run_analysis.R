@@ -112,5 +112,6 @@ names(resultDataFrame) <- c("Subject", "Activity", paste("Mean of [",as.characte
   #remove variables no longer needed (free memory)
 rm(varNames)
 
+write.csv(resultDataFrame, file = "results.txt", row.names = FALSE)
 
 
